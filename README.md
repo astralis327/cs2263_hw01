@@ -10,11 +10,11 @@ This project is not yet available for installation.
 
 ### Usage
 
-Each of the files in this project can be run in the command line by first typing with the 'javac' command, followed by the filename and its extension:
+Each of the files in this project can be run in the command line by first typing with the `javac` command, followed by the filename and its extension:
 
     javac HelloWorld.java
 
-Then execute the program with the 'java' command:
+Then execute the program with the `java` command:
 
     java HelloWorld
 
