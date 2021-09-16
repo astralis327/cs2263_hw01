@@ -33,6 +33,8 @@ caches
 
 # Ignore IntelliJ dists directory
 app/wrapper/dists
+wrapper
+native
 
 # Ignore IntelliJ .idea config files
 .idea
