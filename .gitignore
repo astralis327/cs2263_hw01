@@ -52,3 +52,18 @@ daemon/
 gradlew
 gradle/
 app/build.gradle
+
+
+# Ignore Gradle project-specific cache directory
+.gradle/
+
+
+# Ignore IntelliJ .idea config files
+.idea/
+
+
+#Ignore gradle config files
+gradle
+.gitattributes
+gradlew.bat
+settings.gradle
