@@ -21,3 +21,32 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Ignore IntelliJ caches directory
+caches
+
+# Ignore IntelliJ dists directory
+app/wrapper/dists
+
+# Ignore IntelliJ .idea config files
+.idea
+
+# Ignore IntelliJ native files
+app/native
+
+# Ignore IntelliJ build and scan data
+app/build-scan-data
+
+#Ignore daemon
+daemon
+
+#Ignore gradle config files
+gradlew
+gradle
+app/build.gradle
