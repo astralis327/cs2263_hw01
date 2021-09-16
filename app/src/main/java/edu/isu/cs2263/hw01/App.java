@@ -28,23 +28,23 @@ public class App {
 
         //create a parser
         try{
-        CommandLineParser parser = new DefaultParser();
+            CommandLineParser parser = new DefaultParser();
 
-        //parse the options passed as command line arguments
-        CommandLine cmd = parser.parse(options, arguments);
+            //parse the options passed as command line arguments
+            CommandLine cmd = parser.parse(options, arguments);
 
 
-        if (cmd.hasOption("b") || cmd.hasOption("batch")) {
-            System.out.println("Batch Value: " + arguments[1]);
-        } else if (cmd.hasOption("o") || cmd.hasOption("output")) {
-            System.out.println("Output value: " + arguments[1]);
+            if (cmd.hasOption("b") || cmd.hasOption("batch")) {
+                System.out.println("Batch Value: " + arguments[1]);
+            } else if (cmd.hasOption("o") || cmd.hasOption("output")) {
+                System.out.println("Output value: " + arguments[1]);
+            }
+            else if (cmd.hasOption("h") || cmd.hasOption("help")){
+                //help option formatter
+                HelpFormatter getHelp = new HelpFormatter();
+                getHelp.printHelp("eval", header, options, footer, true);
+            }
         }
-         else if (cmd.hasOption("h") || cmd.hasOption("help")){
-            //help option formatter
-            HelpFormatter getHelp = new HelpFormatter();
-            getHelp.printHelp("eval", header, options, footer, true);
-        }
-    }
         catch (ParseException exception){
             System.out.println("FAILED!!" );
             System.out.println(exception.getMessage());
