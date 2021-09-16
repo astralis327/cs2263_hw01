@@ -33,3 +33,20 @@ caches
 
 # Ignore IntelliJ dists directory
 app/wrapper/dists
+
+# Ignore IntelliJ .idea config files
+.idea
+
+# Ignore IntelliJ native files
+app/native
+
+# Ignore IntelliJ build and scan data
+app/build-scan-data
+
+#Ignore daemon
+daemon
+
+#Ignore gradle config files
+gradlew
+gradle
+app/build.gradle
