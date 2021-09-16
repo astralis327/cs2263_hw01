@@ -26,29 +26,29 @@ hs_err_pid*
 .gradle
 
 # Ignore Gradle build output directory
-build
+build/
 
 # Ignore IntelliJ caches directory
-caches
+caches/
 
 # Ignore IntelliJ dists directory
 app/wrapper/dists
-wrapper
-native
+wrapper/
+native/
 
 # Ignore IntelliJ .idea config files
 .idea
 
 # Ignore IntelliJ native files
-app/native
+app/native/
 
 # Ignore IntelliJ build and scan data
-app/build-scan-data
+app/build-scan-data/
 
 #Ignore daemon
-daemon
+daemon/
 
 #Ignore gradle config files
 gradlew
-gradle
+gradle/
 app/build.gradle
