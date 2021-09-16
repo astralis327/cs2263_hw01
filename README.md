@@ -10,13 +10,11 @@ This project is not yet available for installation.
 
 ### Usage
 
-Each of the files in this project can be run in the command line by first typing with the `javac` command, followed by the filename and its extension:
+This project can be built and run using Gradle, which must be downloaded. Before
+the project can be run, Gradle must be initialized using `Gradle init.`
 
-    javac HelloWorld.java
-
-Then execute the program with the `java` command:
-
-    java HelloWorld
+The command `Gradle build` can be called to build the project, after which `Gradle run`
+may be called to run the project.
 
 ### Contributions
 Contributions to this project are not needed at this time. Please check back a later date.
