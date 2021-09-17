@@ -8,7 +8,6 @@ public class ConsoleLoop {
 
     public String getUserInput(String argument) {
 
-//        if(argument)
         if (argument.contains("txt")) {
             System.out.println("Please enter the correct filename: ");
             Scanner scanner = new Scanner(System.in);

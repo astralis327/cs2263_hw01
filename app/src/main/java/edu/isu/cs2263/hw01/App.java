@@ -96,13 +96,16 @@ public class App {
             //parse the options passed as command line arguments
             CommandLine cmd = parser.parse(options, arguments);
             if (cmd.hasOption("b") || cmd.hasOption("batch")) {
+                //Read math expressions from the file the user gives
                 BatchReader expressionBatch = new BatchReader();
-                String[] fileArray = expressionBatch.getUserInput(arguments[1]);
+                String[] expressArray = expressionBatch.getUserInput(arguments[1]);
 
-                for (String s : fileArray) {
+                for (String s : expressArray) {
+                    //evaluate each expression
                     answer = String.valueOf(evalExpression(s));
                     PrintToConsole console = new PrintToConsole();
                     console.output(s, answer);
+                    //find which file the user wanted to output in by finding the -o flag
                     if (arguments[1] != null) {
                         for (int j = 0; j < arguments.length; j++) {
                             if (Objects.equals(arguments[j], "-o")) {
@@ -110,6 +113,7 @@ public class App {
                                 break;
                             }
                         }
+                        //output to file
                         PrintToFile file = new PrintToFile(arguments[index + 1]);
                         file.output(s, answer);
                     }
