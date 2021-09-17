@@ -23,7 +23,7 @@
 hs_err_pid*
 
 # Ignore Gradle project-specific cache directory
-.gradle
+.gradle/
 
 # Ignore Gradle build output directory
 build/
@@ -31,39 +31,45 @@ build/
 # Ignore IntelliJ caches directory
 caches/
 
+.tmp/
 # Ignore IntelliJ dists directory
+<<<<<<< HEAD
 app/wrapper/dists
-wrapper/
-native/
-
+=======
+>>>>>>> release/v1.1.0
+*wrapper/
+*native/
 # Ignore IntelliJ .idea config files
-.idea
+.idea/
 
+<<<<<<< HEAD
 # Ignore IntelliJ native files
 app/native/
 
 # Ignore IntelliJ build and scan data
 app/build-scan-data/
+=======
+>>>>>>> release/v1.1.0
 
 #Ignore daemon
-daemon/
+*daemon/
 
 #Ignore gradle config files
 gradlew
 gradle/
 app/build.gradle
+<<<<<<< HEAD
 
 
 # Ignore Gradle project-specific cache directory
-.gradle/
 
 
 # Ignore IntelliJ .idea config files
-.idea/
 
 
 #Ignore gradle config files
-gradle
 .gitattributes
 gradlew.bat
 settings.gradle
+=======
+>>>>>>> release/v1.1.0
