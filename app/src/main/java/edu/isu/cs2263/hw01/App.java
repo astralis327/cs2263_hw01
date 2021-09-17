@@ -22,7 +22,7 @@ import java.util.*;
 public class App {
 //
 
-    static void evalExpression(String evalString){
+    static double evalExpression(String evalString){
         //arraylist for separating the numbers out
         ArrayList<String> stringNums = new ArrayList<>();
         //evaluated expression
@@ -76,7 +76,7 @@ public class App {
                 firstOperatorKey += sNum.length() + 1;
             }
         }
-        System.out.println(evaluated);
+        return evaluated;
     }
 
     static void cliDemo(String[] arguments) {
@@ -87,6 +87,8 @@ public class App {
 
         String header = "Evaluation of simple mathematical expressions";
         String footer = "Copyright (C) 2021 Emily Elzinga";
+        String answer;
+        int index = 0;
 
         //create a parser
         try{
@@ -98,11 +100,34 @@ public class App {
                 String[] fileArray = expressionBatch.getUserInput(arguments[1]);
 
                 for (int i = 0; i < fileArray.length; i++){
-                    evalExpression(fileArray[i]);
+                    answer = String.valueOf(evalExpression(fileArray[i]));
+                    PrintToConsole console = new PrintToConsole();
+                    console.output(fileArray[i],answer);
+                    if (arguments[1] != null) {
+                        for (int j = 0; j < arguments.length; j++){
+                            if(Objects.equals(arguments[j], "-o")) {
+                                index = j;
+                                break;
+                            }
+                        }
+                        PrintToFile file = new PrintToFile(arguments[index + 1]);
+                        file.output(fileArray[i], answer);
+                    };
                 }
 
             } else if (cmd.hasOption("o") || cmd.hasOption("output")) {
-                evalExpression(arguments[1]);
+                //get expression from user
+                ConsoleLoop takeExpression = new ConsoleLoop();
+                String eval = takeExpression.getUserInput(arguments[0]);
+                //evaluate user's expression
+                answer = String.valueOf(evalExpression(eval));
+
+                PrintToConsole console = new PrintToConsole();
+                console.output(eval, answer);
+                if (arguments.length == 2) {
+                    PrintToFile file = new PrintToFile(arguments[1]);
+                    file.output(eval, answer);
+                };
             }
             else if (cmd.hasOption("h") || cmd.hasOption("help")){
                 //help option formatter
