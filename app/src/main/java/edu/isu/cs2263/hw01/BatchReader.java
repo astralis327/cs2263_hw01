@@ -11,15 +11,12 @@ public class BatchReader{
     public String[] getUserInput(String argument) throws IOException {
 
         String fileName;
-        String[] stringArr = new String[0];
+        String[] stringArr;
         try{
-
-            File f = new File(argument);
-
             BufferedReader in = new BufferedReader(new FileReader(argument));
             String str;
 
-            List<String> list = new ArrayList<String>();
+            List<String> list = new ArrayList<>();
             while ((str = in.readLine()) != null) {
                 list.add(str);
             }
