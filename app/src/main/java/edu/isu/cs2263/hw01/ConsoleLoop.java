@@ -1,6 +1,5 @@
 package edu.isu.cs2263.hw01;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class ConsoleLoop {
@@ -32,9 +31,6 @@ public class ConsoleLoop {
                         evalString.indexOf('/') != -1 || evalString.indexOf('*') != -1) {
                     valid = true;
                 }
-            }
-            if (argument == null) {
-                evalString = scanner.next();
             }
             return evalString;
         }

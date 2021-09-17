@@ -28,11 +28,11 @@ public class App {
         //evaluated expression
         double evaluated = 0;
         //each number string is eventually converted
-        int num = 0;
-        String sNum = "";
-        Integer firstOperatorKey = 0;
+        int num;
+        String sNum;
+        int firstOperatorKey = 0;
         //Map to store operators
-        Map<Integer, Character> operators= new LinkedHashMap<Integer, Character>();
+        Map<Integer, Character> operators= new LinkedHashMap<>();
         //get rid of spaces
         evalString = evalString.replaceAll("\\s+","");
 
@@ -99,20 +99,20 @@ public class App {
                 BatchReader expressionBatch = new BatchReader();
                 String[] fileArray = expressionBatch.getUserInput(arguments[1]);
 
-                for (int i = 0; i < fileArray.length; i++){
-                    answer = String.valueOf(evalExpression(fileArray[i]));
+                for (String s : fileArray) {
+                    answer = String.valueOf(evalExpression(s));
                     PrintToConsole console = new PrintToConsole();
-                    console.output(fileArray[i],answer);
+                    console.output(s, answer);
                     if (arguments[1] != null) {
-                        for (int j = 0; j < arguments.length; j++){
-                            if(Objects.equals(arguments[j], "-o")) {
+                        for (int j = 0; j < arguments.length; j++) {
+                            if (Objects.equals(arguments[j], "-o")) {
                                 index = j;
                                 break;
                             }
                         }
                         PrintToFile file = new PrintToFile(arguments[index + 1]);
-                        file.output(fileArray[i], answer);
-                    };
+                        file.output(s, answer);
+                    }
                 }
 
             } else if (cmd.hasOption("o") || cmd.hasOption("output")) {
@@ -127,7 +127,7 @@ public class App {
                 if (arguments.length == 2) {
                     PrintToFile file = new PrintToFile(arguments[1]);
                     file.output(eval, answer);
-                };
+                }
             }
             else if (cmd.hasOption("h") || cmd.hasOption("help")){
                 //help option formatter
@@ -141,7 +141,7 @@ public class App {
         }
     }
 
-    public static void main(String[] args) throws ParseException {
+    public static void main(String[] args) {
         cliDemo(args);
     }
 
